@@ -1,13 +1,8 @@
 import pandas as pd
 import numpy as np
-import datetime
-import tqdm
 import random
-import json
 
 from scipy.stats import norm, multinomial
-from scipy.special import gammaln
-from math import log
 
 class TrialClass:
     def __init__(self, X, k, smoothing=0.000001):
@@ -96,12 +91,6 @@ class TrialClass:
 #                print((self.pi[e] + self.a) * k_prob * p_prob * l_prob * t_prob)
             ll -= np.log(tmp)
         return ll
-    
-    def _ll(self, vec, phi):
-        _ll = gammaln(np.sum(vec) + 1) - np.sum([gammaln(w+1) for w in vec]) +\
-            np.sum([w*np.log(phi[x]) for x, w in enumerate(vec)])
-        
-        return _ll
 
     def _fit(self):
         self.e_step()
