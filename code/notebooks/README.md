@@ -1,26 +1,26 @@
-# jupyter notebooks
+# Jupyter notebooks
 
-these notebooks are examples of the pre- and post-processing (plotting and evaluating the lda results) that i did with the corpora.
+These notebooks are examples of the pre- and post-processing (plotting and evaluating the lda results) of the corpora.
 
-### pre-processing
+### Pre-processing
 
-- scrape articles from web using gdelt URLs
-- drop duplicates
-- drop empty articles
-- drop article if no keywords occur
+- Scrape articles from web using GDELT's URLs
+- Drop duplicates
+- Drop empty articles
+- Drop article if no keywords occur
 
-### first analysis
+### First analysis
 
-- turn SQL-date into datetime object
-- count number of words
-- get quotes with regexes
-- plot article count per day
-- plot quoted ratio per day
-- plot text length per day
-- get named entities with spacy
-- plot most common sources by continent, number of articles
+- Turn SQL-date into datetime object
+- Count number of words
+- Get quotes with regexes
+- Plot article count per day
+- Plot quoted ratio per day
+- Plot text length per day
+- Get named entities with spacy
+- Plot most common sources by continent, number of articles
 
-### post-processing
+### Post-processing
 
-- plot lda topics by day
-- compute and plot hellinger distance between days
+- Plot LDA topics by day
+- Compute and plot Hellinger distance between days
