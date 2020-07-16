@@ -14,4 +14,5 @@ using graphical models, i compare global media reports on two different crises f
 ### repo content:
 
 - code: lda and red scripts
-- notebooks: jupyter notebooks for pre- and post-processing of the corpora
+- code/notebooks: jupyter notebooks for pre- and post-processing of the corpora
+- data: raw csvs from gdelt
