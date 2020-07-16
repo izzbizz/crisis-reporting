@@ -63,8 +63,8 @@ class RED:
             self.phi_p[:, e] = em
 		
 		# initialize gmm parameters        
-        self.mus = random.sample(range(1, 30), self.k)
-        self.sigmas = random.sample(range(1, 7), self.k)
+        self.mus = random.choices(range(1, 30), self.k)
+        self.sigmas = random.choices(range(1, 11), self.k)
     
     def fit(self, tol=.1, max_iters=10):
         num_iters = 0
@@ -82,14 +82,23 @@ class RED:
         ll = 0
         for x in range(self.M):
             tmp = 0
+            # pmf returns nan of the vector is empty, therefore: set n to 1 for empty vectors
+            if np.sum(self.keywords[x]) > 0:
+                n_k = np.sum(self.keywords[x])
+            else: n_k = 1
+            if np.sum(self.persons[x]) > 0:
+                n_p = np.sum(self.persons[x])
+            else: n_p = 1
+            if np.sum(self.places[x]) > 0:
+                n_l = np.sum(self.places[x])
+            else: n_l = 1
             for e in range(self.k):
                 t_prob = norm.pdf(self.days[x], self.mus[e], self.sigmas[e]) + self.a
-                k_prob = multinomial.pmf(self.keywords[x], len(self.keywords[x]), self.phi_k[:, e]) + self.a
-                p_prob = multinomial.pmf(self.persons[x], len(self.persons[x]), self.phi_p[:, e]) + self.a
-                l_prob = multinomial.pmf(self.places[x], len(self.places[x]), self.phi_l[:, e]) + self.a
+                k_prob = multinomial.pmf(self.keywords[x], n_k, self.phi_k[:, e]) + self.a
+                p_prob = multinomial.pmf(self.persons[x], n_p, self.phi_p[:, e]) + self.a
+                l_prob = multinomial.pmf(self.places[x], n_l, self.phi_l[:, e]) + self.a
                 tmp += (self.pi[e] + self.a) * k_prob * p_prob * l_prob * t_prob
-#                print((self.pi[e] + self.a) * k_prob * p_prob * l_prob * t_prob)
-            ll -= np.log(tmp)
+            ll += np.log(tmp)
         return ll
 
     def _fit(self):
