@@ -1,7 +1,7 @@
-### raw data as extracted from gdelt and stopwords
+### Raw data as extracted from GDELT and stopwords
 
-- six .csv files with events on bahamas between september 1 and october 1 2019 (split because of gdelt's size limit)
+- Six .csv files with events on the Bahamas between September 1 and October 1 2019 (split because of GDELT's size limit)
 
-- one .csv file with events in mozambique between march 15 and april 14 2019 
+- One .csv file with events in Mozambique between March 15 and April 14 2019 
 
-news-specific stopwords are from the newspaper3k, an article extraction library: https://newspaper.readthedocs.io/en/latest/
+News-specific stopwords are from the newspaper3k, an article extraction library: https://newspaper.readthedocs.io/en/latest/
