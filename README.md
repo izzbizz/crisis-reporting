@@ -9,7 +9,7 @@ Using graphical models, I compare global media reports on two different crises f
 3. Preprocessing: removal of duplicates, text statistics
 4. First analysis: named entities (using [spacy](https://github.com/explosion/spaCy)) & websites
 5. LDA topic models with [gensim](https://github.com/RaRe-Technologies/gensim)
-6. Retrospective event detection as described in [Wang et al.](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.90.9651&rep=rep1&type=pdf)
+6. Retrospective event detection as described in [Li et al.](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.90.9651&rep=rep1&type=pdf)
 
 ### Repo content:
 
